@@ -2,7 +2,7 @@
 
 A full-stack web application that allows users to upload password-protected PDF files and download an unlocked version instantly.
 
-🌐 **Live Backend API:**  
+🌐 **Live Web Application:**  
 [https://pdf-password-remover-qe3i.onrender.com](https://pdf-password-remover-1.onrender.com/)
 
 ---
