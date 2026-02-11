@@ -70,6 +70,7 @@ function App() {
         <h1 style={titleStyle}>🔓 PDF Password Remover</h1>
         <p style={subtitleStyle}>
           Securely remove password protection from your PDF files.
+          <p><b>We do not store your documents and password!</b></p>
         </p>
 
         <form onSubmit={handleSubmit} style={formStyle}>
