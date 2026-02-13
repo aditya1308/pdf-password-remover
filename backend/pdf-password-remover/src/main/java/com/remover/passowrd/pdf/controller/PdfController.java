@@ -22,7 +22,6 @@ public class PdfController {
     @PostMapping(value = "/unlock", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<byte[]> unlockPdf(@RequestPart("file") MultipartFile file, @RequestPart("password") String password) {
 
-        log.info("Password : {}", password);
         try (PDDocument document = Loader.loadPDF(file.getBytes(), password)) {
 
             document.setAllSecurityToBeRemoved(true);
@@ -30,7 +29,7 @@ public class PdfController {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             document.save(out);
 
-            log.info("PDF unlocked successfully");
+            log.info("PDF unlocked successfully : {}", file.getOriginalFilename());
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_DISPOSITION,
                             "attachment; filename=unlocked.pdf")
